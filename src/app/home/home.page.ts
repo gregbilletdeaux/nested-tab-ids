@@ -4,13 +4,14 @@ import { IonicModule, RefresherCustomEvent } from '@ionic/angular';
 import { MessageComponent } from '../message/message.component';
 
 import { DataService, Message } from '../services/data.service';
+import { SharedTabComponent } from '../shared-tab/shared-tab.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, MessageComponent],
+  imports: [IonicModule, CommonModule, MessageComponent, SharedTabComponent],
 })
 export class HomePage {
   private data = inject(DataService);

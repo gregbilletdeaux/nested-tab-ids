@@ -1,8 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonicModule, Platform } from '@ionic/angular';
 import { Message } from '../services/data.service';
+import { SharedTabComponent } from '../shared-tab/shared-tab.component';
 
 @Component({
   selector: 'app-message',
@@ -10,12 +16,12 @@ import { Message } from '../services/data.service';
   styleUrls: ['./message.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterLink],
+  imports: [CommonModule, IonicModule, RouterLink, SharedTabComponent],
 })
 export class MessageComponent {
   private platform = inject(Platform);
   @Input() message?: Message;
   isIos() {
-    return this.platform.is('ios')
+    return this.platform.is('ios');
   }
 }

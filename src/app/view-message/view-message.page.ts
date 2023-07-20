@@ -3,13 +3,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonicModule, Platform } from '@ionic/angular';
 import { DataService, Message } from '../services/data.service';
+import { SharedTabComponent } from '../shared-tab/shared-tab.component';
 
 @Component({
   selector: 'app-view-message',
   templateUrl: './view-message.page.html',
   styleUrls: ['./view-message.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule],
+  imports: [IonicModule, CommonModule, SharedTabComponent],
 })
 export class ViewMessagePage implements OnInit {
   public message!: Message;
@@ -25,7 +26,7 @@ export class ViewMessagePage implements OnInit {
   }
 
   getBackButtonText() {
-    const isIos = this.platform.is('ios')
+    const isIos = this.platform.is('ios');
     return isIos ? 'Inbox' : '';
   }
 }
