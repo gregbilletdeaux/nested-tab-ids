@@ -1,6 +1,6 @@
 <ion-tabs>
   <ion-tab-bar>
-    <ion-tab-button *ngFor="let tab of tabs" [tab]="id(tab)">
+    <ion-tab-button *ngFor="let tab of tabs" [tab]="generateId(tab)">
       <ion-label>{{ tab.name }}</ion-label>
     </ion-tab-button>
   </ion-tab-bar>

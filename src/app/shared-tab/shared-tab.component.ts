@@ -29,7 +29,7 @@ export class SharedTabComponent implements OnInit {
 
   ngOnInit() {}
 
-  id(tab: Tab) {
+  generateId(tab: Tab) {
     return `${tab.name}-${this.suffix}`;
   }
 }
