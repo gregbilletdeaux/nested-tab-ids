@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 
 interface Tab {
   name: string;
+  link: string;
 }
 
 @Component({
@@ -19,9 +20,11 @@ export class SharedTabComponent implements OnInit {
   public tabs: Tab[] = [
     {
       name: 'info',
+      link: 'info',
     },
     {
       name: 'transactions',
+      link: 'transactions',
     },
   ];
 
@@ -30,6 +33,6 @@ export class SharedTabComponent implements OnInit {
   ngOnInit() {}
 
   generateId(tab: Tab) {
-    return `${tab.name}-${this.suffix}`;
+    return `${tab.name}/${this.suffix}`;
   }
 }

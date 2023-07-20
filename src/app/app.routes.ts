@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { SimpleComponent } from './simple/simple.component';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,16 @@ export const routes: Routes = [
           import('./view-message/view-message.page').then(
             (m) => m.ViewMessagePage
           ),
+        children: [
+          {
+            path: 'info/:unused',
+            component: SimpleComponent,
+          },
+          {
+            path: 'transactions/:unused',
+            component: SimpleComponent,
+          },
+        ],
       },
     ],
   },
